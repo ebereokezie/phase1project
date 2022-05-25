@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+}
+
+#music-header {
+    display: flex;
+    justify-content: center;
+    background: black;
+    color: gold;
+    font-size: 30px;
+    padding-top: 25px
+}
+
+#search-bar{
+    display: flex;
+    justify-content:center;
+}
