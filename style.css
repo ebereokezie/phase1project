@@ -14,9 +14,30 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-.section{
-    color: red;
-    font-size: 20px;
+.album-cards-header{
+    color: Black;
+    text-align: center;
+    font-size: 15px;
+    position: fixed;
+    left: 0;
+    top:17.5%;
+    width: 47%;
+    border: 14px groove gold;
+    padding: 1px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.favorite-header{
+    color: Black;
+    text-align: center;
+    font-size: 15px;
+    position: fixed;
+    right: 0;
+    top:17.5%;
+    width: 49%;
+    border: 14px groove gold;
+    padding: 1px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 footer {
