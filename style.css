@@ -45,7 +45,7 @@ body{
     position: fixed;
     left:0;
     width: 47%;
-    border: 1px solid black;
+    border: 5px solid black;
     
 }
 
@@ -54,7 +54,44 @@ body{
     position: fixed;
     right:0;
     width: 49%;
-    border: 1px solid black;
+}
+
+.album-card{
+        text-align: center;
+        border: 3px solid black;
+        padding: 1px;
+        width: 500px;
+        height: 500px;
+        margin: 7px 200px;
+        box-shadow: 10px 5px gold;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+      }
+
+.album-picture{
+    height: 300px;
+    text-align: center
+}
+
+button{
+    cursor: pointer;
+    background-color: gold;
+    box-shadow: 2px 2px gray
+
+}
+
+button:hover{
+    background-color: white;
+    color: black
+}
+
+button:active {
+    box-shadow: none
+
+}
+
+.my-albums{
+    text-align: center;
+    font-size: 25px;
 }
 footer {
     text-align: center;
