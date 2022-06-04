@@ -21,17 +21,33 @@ document.addEventListener("DOMContentLoaded", () => {
         let favoriteButton = document.createElement("button")
         favoriteButton.classList.add("button")
         favoriteButton.textContent = "Favorite"
+
+        let favoriteList = document.createElement("div")
+        favoriteList.classList.add("my-albums")
+
+        let listName = document.createElement("li")
+        listName.textContent = `${element.name}`
+
         albumCard.appendChild(name)
         albumCard.appendChild(picture)
         albumCard.appendChild(artistType)
         albumCard.appendChild(countryOfOrigin)
         albumCard.appendChild(favoriteButton)
         albumContainer.appendChild(albumCard)
+
+        albumContainer.addEventListener("click",(event)=>{
+            if(event.target.className === "button"){
+                favoriteList.appendChild(listName)
+                formContainer.appendChild(favoriteList)
+            }
+            console.log(event.target)
+        })
     
     }
     let albumContainer = document.getElementById("album-container")
-
+    let formContainer = document.getElementById("favorite-list")
 
 
 
 })
+
