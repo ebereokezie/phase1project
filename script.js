@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
         listName.textContent = `${element.name} `
 
                
-        listName.appendChild(deleteFavList)
         albumCard.appendChild(deleteCardButton)
         albumCard.appendChild(name)
         albumCard.appendChild(picture)
