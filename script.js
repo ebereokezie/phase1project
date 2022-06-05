@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => data.json())
         .then(data => {let artistsInfo = data["artists"]
         let artistInfo = artistsInfo.filter(highestProbability)
-        console.log(artistInfo[0].name)
         renderData(artistInfo[0])
         })
 
@@ -19,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function highestProbability(artistInfo){
         return artistInfo.score === 100
     }
+
+    let albumContainer = document.getElementById("album-container")
+    let formContainer = document.getElementById("favorite-list")
 
     function renderData(element) {
 
@@ -74,8 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     
     }
-    let albumContainer = document.getElementById("album-container")
-    let formContainer = document.getElementById("favorite-list")
+    
 
 
 

@@ -63,7 +63,8 @@ body{
         height: 500px;
         margin: 7px 200px;
         box-shadow: 10px 5px gold;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        position: relative
       }
 
 .album-picture{
@@ -104,7 +105,7 @@ footer {
  }
 
  .delete-button{
-     position:absolute;
+     position:relative;
      top: 15px;
      right: 200px;
 
