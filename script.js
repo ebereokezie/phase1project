@@ -3,12 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
     searchForm.addEventListener("submit", (event) =>{
         event.preventDefault()
         console.log(document.querySelector("input").value)
+        let artistInput = document.querySelector("input").value
+
+    fetch(`https://musicbrainz.org/ws/2/artist/?fmt=json&query=name:${artistInput}`)
+        .then(data => data.json())
+        .then(data => {let clean_data = data["artists"][0]
+    renderData(clean_data)})
+
+    searchForm.reset()
     })
 
-    fetch(`https://musicbrainz.org/ws/2/artist/?fmt=json&query=name:snoop dogg`)
-    .then(data => data.json())
-    .then(data => {let clean_data = data["artists"][0]
-    renderData(clean_data)})
+    
 
     function renderData(element) {
 
@@ -23,16 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
         let countryOfOrigin = document.createElement("p")
         artistType.textContent = `Artist type: ${element.disambiguation}`
         countryOfOrigin.textContent= `Country of Origin: ${element.country}`
+       
+        let deleteButton = document.createElement("button")
+        deleteButton.classList.add("delete-button")
+        deleteButton.addEventListener("click", (event)=>{
+        event.target.parentNode.remove()})
+        
+        
+        
         let favoriteButton = document.createElement("button")
         favoriteButton.classList.add("button")
         favoriteButton.textContent = "Favorite"
+
 
         let favoriteList = document.createElement("div")
         favoriteList.classList.add("my-albums")
 
         let listName = document.createElement("li")
         listName.textContent = `${element.name}`
-
+        
+        albumCard.appendChild(deleteButton)
         albumCard.appendChild(name)
         albumCard.appendChild(picture)
         albumCard.appendChild(artistType)
