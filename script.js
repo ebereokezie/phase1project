@@ -7,13 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetch(`https://musicbrainz.org/ws/2/artist/?fmt=json&query=name:${artistInput}`)
         .then(data => data.json())
-        .then(data => {let clean_data = data["artists"][0]
-    renderData(clean_data)})
+        .then(data => {let artistsInfo = data["artists"]
+        let artistInfo = artistsInfo.filter(highestProbability)
+        console.log(artistInfo[0].name)
+        renderData(artistInfo[0])
+        })
 
     searchForm.reset()
     })
 
-    
+    function highestProbability(artistInfo){
+        return artistInfo.score === 100
+    }
 
     function renderData(element) {
 
@@ -33,20 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
         deleteCardButton.classList.add("delete-button")
         deleteCardButton.textContent = "x"
         deleteCardButton.addEventListener("click", (event)=>{
-        event.target.parentNode.remove()})
+        albumCard.remove()})
         
         
         
         let favoriteButton = document.createElement("button")
-        favoriteButton.classList.add("button")
+        favoriteButton.classList.add("favButton")
         favoriteButton.textContent = "Favorite"
 
 
         let favoriteList = document.createElement("div")
         favoriteList.classList.add("my-albums")
 
+        
+        
         let listName = document.createElement("li")
         listName.textContent = `${element.name} `
+        
 
                
         albumCard.appendChild(deleteCardButton)
@@ -58,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         albumContainer.appendChild(albumCard)
 
         albumContainer.addEventListener("click",(event)=>{
-            if(event.target.className === "button"){
+            if(event.target.className === "favButton"){
                 favoriteList.appendChild(listName)
                 formContainer.appendChild(favoriteList)
             }
