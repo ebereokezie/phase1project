@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+    let searchForm = document.getElementById("search-bar")
+    searchForm.addEventListener("submit", (event) =>{
+        event.preventDefault()
+        console.log(document.querySelector("input").value)
+    })
 
     fetch(`https://musicbrainz.org/ws/2/artist/?fmt=json&query=name:snoop dogg`)
     .then(data => data.json())
