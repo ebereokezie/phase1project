@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
         artistType.textContent = `Artist type: ${element.disambiguation}`
         countryOfOrigin.textContent= `Country of Origin: ${element.country}`
        
-        let deleteButton = document.createElement("button")
-        deleteButton.classList.add("delete-button")
-        deleteButton.textContent = "x"
-        deleteButton.addEventListener("click", (event)=>{
+        let deleteCardButton = document.createElement("button")
+        deleteCardButton.classList.add("delete-button")
+        deleteCardButton.textContent = "x"
+        deleteCardButton.addEventListener("click", (event)=>{
         event.target.parentNode.remove()})
         
         
@@ -46,9 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
         favoriteList.classList.add("my-albums")
 
         let listName = document.createElement("li")
-        listName.textContent = `${element.name}`
-        
-        albumCard.appendChild(deleteButton)
+        listName.textContent = `${element.name} `
+
+               
+        listName.appendChild(deleteFavList)
+        albumCard.appendChild(deleteCardButton)
         albumCard.appendChild(name)
         albumCard.appendChild(picture)
         albumCard.appendChild(artistType)
