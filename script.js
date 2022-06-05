@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
        
         let deleteButton = document.createElement("button")
         deleteButton.classList.add("delete-button")
+        deleteButton.textContent = "x"
         deleteButton.addEventListener("click", (event)=>{
         event.target.parentNode.remove()})
         

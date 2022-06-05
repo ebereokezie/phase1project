@@ -103,3 +103,10 @@ footer {
     color: gold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
  }
+
+ .delete-button{
+     position:absolute;
+     top: 15px;
+     right: 200px;
+
+ }
