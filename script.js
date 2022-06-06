@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         deleteCardButton.classList.add("delete-button")
         deleteCardButton.textContent = "x"
         deleteCardButton.addEventListener("click", (event)=>{
-        albumCard.remove()})
+        albumCard.remove();
+        ;})
         
         
         
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         
         let listName = document.createElement("li")
-        listName.textContent = `${element.name} `
+        
         
 
                
@@ -67,8 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
         albumCard.appendChild(favoriteButton)
         albumContainer.appendChild(albumCard)
 
-        albumContainer.addEventListener("click",(event)=>{
+        favoriteButton.addEventListener("click",(event)=>{
             if(event.target.className === "favButton"){
+                listName.textContent = `${element.name} `
                 favoriteList.appendChild(listName)
                 formContainer.appendChild(favoriteList)
             }
@@ -78,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
 
-
+ 
 
 })
 
