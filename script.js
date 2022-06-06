@@ -52,11 +52,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let favoriteList = document.createElement("div")
         favoriteList.classList.add("my-albums")
-
+        
         
         
         let listName = document.createElement("li")
         
+        let deleteListButton = document.createElement("button")
+        deleteListButton.classList.add("delete-list-button")
+        deleteListButton.textContent = "x"
+        deleteListButton.addEventListener("click", (event)=>{
+        event.target.parentNode.remove();
+        ;})
         
 
                
@@ -71,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         favoriteButton.addEventListener("click",(event)=>{
             if(event.target.className === "favButton"){
                 listName.textContent = `${element.name} `
+                listName.appendChild(deleteListButton)
                 favoriteList.appendChild(listName)
                 formContainer.appendChild(favoriteList)
             }
